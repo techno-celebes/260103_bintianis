@@ -1,0 +1,151 @@
+:root {
+    --brand-dark: #0f3b3a;
+    --brand: #136b66;
+    --brand-accent: #d4a762; /* warna emas pasir */
+    --sand: #f7f4ee;
+    --ink: #232426;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family:
+        system-ui,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Helvetica,
+        Arial,
+        "Apple Color Emoji",
+        "Segoe UI Emoji";
+    color: var(--ink);
+    background: #fff;
+    scroll-padding-top: 5rem; /* untuk bagian anchor di bawah navbar yang sticky */
+}
+/* Pengumuman atas */
+.topbar {
+    background: linear-gradient(90deg, var(--brand-dark), var(--brand));
+    color: #fff;
+    font-size: 0.9375rem;
+}
+/* Navbar */
+.navbar {
+    box-shadow: 0 2px 12px rgba(15, 59, 58, 0.08);
+}
+.navbar-brand span {
+    color: var(--brand-dark);
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+/* Hero */
+.hero {
+    background: radial-gradient(1200px 400px at 80% -10%, #e7f3f2 10%, transparent 60%),
+        radial-gradient(700px 300px at -10% 20%, #fbf7ed 10%, transparent 60%), linear-gradient(#fff, #fff);
+}
+.badge-trust {
+    background: #f2faf9;
+    color: var(--brand-dark);
+    border: 1px solid #e1f0ef;
+}
+.star {
+    color: #ffb545;
+}
+.cta-primary {
+    background: var(--brand);
+    border-color: var(--brand);
+}
+.cta-primary:hover {
+    background: var(--brand-dark);
+    border-color: var(--brand-dark);
+}
+.cta-outline {
+    border-color: var(--brand);
+    color: var(--brand);
+}
+.cta-outline:hover {
+    background: var(--brand);
+    color: #fff;
+}
+/* Blok visual placeholder untuk gambar */
+.visual {
+    background: linear-gradient(135deg, rgba(19, 107, 102, 0.08), rgba(212, 167, 98, 0.1)),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.02) 0 8px, transparent 8px 16px);
+    border: 1px solid rgba(15, 59, 58, 0.08);
+    border-radius: 12px;
+}
+.ratio.visual::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+    pointer-events: none;
+}
+/* Kartu dan bagian */
+.section {
+    padding: 4.5rem 0;
+}
+.section-muted {
+    background: var(--sand);
+}
+.card {
+    border: 1px solid rgba(15, 59, 58, 0.08);
+    box-shadow: 0 0.3rem 1rem rgba(15, 59, 58, 0.06);
+}
+.icon-bullet {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ecf7f6;
+    color: var(--brand);
+}
+.list-check li {
+    padding-left: 1.75rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+.list-check li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--brand);
+    font-weight: 700;
+}
+.footer {
+    background: #0f3b3a;
+    color: #cfe8e6;
+}
+.footer a {
+    color: #eaeaea;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Helper aksesibilitas */
+.skip-link {
+    position: absolute;
+    left: -999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0.5rem;
+    width: auto;
+    height: auto;
+    padding: 0.5rem 0.75rem;
+    background: #000;
+    color: #fff;
+    z-index: 2000;
+    border-radius: 0.25rem;
+}
